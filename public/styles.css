@@ -318,7 +318,8 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 32%;
+  /* Sky stays on the left for the headline; sea oats stay in frame on the right. */
+  object-position: 58% center;
 }
 
 .hero-grain {
@@ -331,16 +332,16 @@ a:hover {
 
 .hero-scrim {
   background:
-    linear-gradient(180deg, rgba(7, 22, 32, 0.18) 0%, rgba(7, 22, 32, 0.28) 36%, rgba(7, 20, 30, 0.82) 72%, rgba(6, 16, 24, 0.94) 100%),
-    linear-gradient(90deg, rgba(6, 18, 26, 0.45), transparent 58%);
+    linear-gradient(180deg, rgba(7, 22, 32, 0.14) 0%, rgba(7, 22, 32, 0.36) 32%, rgba(7, 20, 30, 0.78) 62%, rgba(6, 16, 24, 0.92) 100%),
+    linear-gradient(90deg, rgba(6, 18, 26, 0.74) 0%, rgba(6, 18, 26, 0.46) 38%, rgba(6, 18, 26, 0.18) 64%, transparent 84%);
 }
 
 .hero-copy {
   position: relative;
   z-index: 1;
-  width: min(46rem, calc(100% - 2rem));
-  margin: 0 auto 0 0;
-  padding: 4.5rem 1rem 2.4rem;
+  width: min(var(--page), calc(100% - 2rem));
+  margin-inline: auto;
+  padding: 4.5rem 0 2.4rem;
 }
 
 .kicker {
@@ -581,27 +582,34 @@ h2 {
   border-radius: 1rem;
   overflow: hidden;
   border: 1px solid var(--line);
+  min-width: 0;
+}
+
+.frame figure {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
 }
 
 .frame-media {
+  position: relative;
   aspect-ratio: 4 / 3;
   background: #e7dccb;
+  overflow: hidden;
 }
 
-.frame-wide .frame-media {
-  aspect-ratio: 16 / 9;
+.frame-feature .frame-media {
+  aspect-ratio: 16 / 7;
 }
 
 .frame img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.frame-hawk img {
-  object-fit: contain;
-  object-position: center;
 }
 
 .frame figcaption {
@@ -641,23 +649,40 @@ h2 {
 .share-row {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.6rem;
   margin: 1.3rem 0 0;
   padding: 0;
   list-style: none;
 }
 
+.share-row li {
+  display: flex;
+  align-items: center;
+}
+
 .share-row a,
 .share-row button {
   appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
   border: 1px solid var(--line);
   background: var(--white);
   color: var(--navy);
   border-radius: 999px;
   min-height: 2.8rem;
   padding: 0.55rem 1rem;
-  font: 600 0.95rem/1 "Outfit", sans-serif;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
   text-decoration: none;
+  vertical-align: middle;
   cursor: pointer;
 }
 
@@ -796,8 +821,20 @@ h2 {
   font-size: clamp(2.2rem, 6vw, 3.4rem);
 }
 
+@media (max-width: 719px) {
+  .hero-media img,
+  .hero-media video {
+    object-position: 64% center;
+  }
+
+  .hero-scrim {
+    background:
+      linear-gradient(180deg, rgba(7, 22, 32, 0.22) 0%, rgba(7, 22, 32, 0.55) 26%, rgba(7, 20, 30, 0.84) 52%, rgba(6, 16, 24, 0.94) 100%),
+      linear-gradient(90deg, rgba(6, 18, 26, 0.62) 0%, rgba(6, 18, 26, 0.36) 48%, rgba(6, 18, 26, 0.16) 74%, transparent 92%);
+  }
+}
+
 @media (min-width: 720px) {
-  .hero-copy,
   .section,
   .band {
     padding-left: 1.5rem;
@@ -805,14 +842,15 @@ h2 {
   }
 
   .hero-copy {
+    width: min(var(--page), calc(100% - 3rem));
     padding-bottom: 3.4rem;
   }
 
   .gallery {
-    grid-template-columns: 1.15fr 0.9fr 0.75fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .frame-wide {
+  .frame-feature {
     grid-column: 1 / -1;
   }
 }
