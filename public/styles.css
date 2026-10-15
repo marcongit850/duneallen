@@ -565,7 +565,7 @@ h2 {
 }
 
 .cross svg,
-.locator svg {
+.locator img {
   display: block;
   width: 100%;
   height: auto;
@@ -578,10 +578,6 @@ h2 {
 .locator {
   width: min(100%, 52rem);
   margin-inline: auto;
-}
-
-.locator svg {
-  background: #efe7dc;
 }
 
 .cross figcaption,
