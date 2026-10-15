@@ -584,10 +584,6 @@ h2 {
   background: #efe7dc;
 }
 
-.cross .label-short {
-  display: none;
-}
-
 .cross figcaption,
 .locator figcaption {
   padding: 1rem 1rem 1.15rem;
@@ -978,9 +974,6 @@ h2 {
 }
 
 @media (max-width: 719px) {
-  .cross .label-full { display: none; }
-  .cross .label-short { display: inline; }
-
   .hero-media img,
   .hero-media video {
     object-position: 64% center;
