@@ -25,8 +25,8 @@ The contact handler checks a honeypot field (`company_website`), rejects cross-o
 
 - No D1, R2, KV, or paid third party services.
 - Brand logo source: `images/logo.png` (not public). The header uses `public/images/logo.webp`, a transparent background version of that mark. Favicons are cropped from the D.
-- Hero still: `public/images/hero.webp` (Marc's aerial). Historic shoreline: `public/images/historic.webp`.
-- Wildlife photos in the community section are the four Wikimedia Commons files by The Bushranger, verified as CC BY-SA 4.0 on their Commons file pages. Credits (author, license link, source link, and the WebP edit) are in the footer. The three "permission required" images from the image guide are not used. No deed boundary is drawn on any photo.
+- Hero still: `public/images/hero.webp` (2800px) with `public/images/hero-1400.webp` in `srcset`. It is Alexander Hatley's sea oats photograph at Topsail Hill Preserve State Park, CC BY 2.0. `public/images/og.jpg` is a 1200x630 crop of that same photograph. Historic shoreline: `public/images/historic-shoreline.webp`.
+- Community photos are four Alexander Hatley photographs of Topsail Hill Preserve State Park (next to Dune Allen), CC BY 2.0. Each has a full WebP and a 900px `srcset` variant. They are not labeled as Dune Allen itself. Credits (author, license link, source link, and the WebP edit) are in the footer. No deed boundary is drawn on any photo.
 
 ## Donate link
 
@@ -37,13 +37,13 @@ Every Contribute button reads `DONATE_URL` in `public/config.js`.
 
 ## Hero video
 
-The hero is the aerial photograph until a video is configured.
+The hero is the sea oats photograph until a video is configured.
 
 1. Put a short MP4 in `public/media/` (optional WebM beside it).
 2. In `public/config.js`, set `HERO_VIDEO` to the public path, for example `"/media/hero.mp4"`.
 3. Optionally set `HERO_VIDEO_WEBM` the same way.
 
-The video is muted, looping, inline, and uses the aerial as its poster. If `HERO_VIDEO` is empty, the file is missing, or the visitor has `prefers-reduced-motion`, the aerial stays.
+The video is muted, looping, inline, and uses the hero photograph as its poster. If `HERO_VIDEO` is empty, the file is missing, or the visitor has `prefers-reduced-motion`, the photograph stays.
 
 ## Secrets and env vars (names only)
 
