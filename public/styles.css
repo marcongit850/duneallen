@@ -889,6 +889,11 @@ h2 {
     padding: 1.15rem 0.8rem 0 0;
   }
 
+  /* Dot sits on the top rule, clear of the date label. */
+  .arc li::before {
+    top: calc(-0.275rem - 0.5px);
+  }
+
   .case-layout {
     grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr);
     align-items: start;

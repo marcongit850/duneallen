@@ -25,7 +25,7 @@ The contact handler checks a honeypot field (`company_website`), rejects cross-o
 
 - No D1, R2, KV, or paid third party services.
 - Brand logo source: `images/logo.png` (not public). The header uses `public/images/logo.webp`, a transparent background version of that mark. Favicons are cropped from the D.
-- Hero still: `public/images/hero.webp` (Marc's aerial). Historic shoreline: `public/images/historic.webp`.
+- Hero still: `public/images/hero.webp` (Marc's aerial). Historic shoreline: `public/images/historic-shoreline.webp`.
 - Wildlife photos in the community section are the four Wikimedia Commons files by The Bushranger, verified as CC BY-SA 4.0 on their Commons file pages. Credits (author, license link, source link, and the WebP edit) are in the footer. The three "permission required" images from the image guide are not used. No deed boundary is drawn on any photo.
 
 ## Donate link
