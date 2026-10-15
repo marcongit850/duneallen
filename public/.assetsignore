@@ -1,0 +1,13 @@
+# Second guard so docs, source, and config are never published as site files.
+README.md
+ARCHITECTURE.md
+wrangler.jsonc
+package.json
+package-lock.json
+tsconfig.json
+worker-configuration.d.ts
+src/
+test/
+media/
+.git/
+node_modules/

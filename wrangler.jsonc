@@ -1,0 +1,36 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "duneallen",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-15",
+  "upload_source_maps": true,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  // Outbound mail. No destination lock, so CONTACT_TO can move to another
+  // verified address without a binding change. The from address must belong
+  // to a domain onboarded for Email Sending.
+  "send_email": [
+    {
+      "name": "EMAIL"
+    }
+  ],
+  "vars": {
+    "CONTACT_TO": "marc@whpinc.com",
+    "CONTACT_FROM": "noreply@friendsofduneallen.com"
+  },
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 1
+    }
+  }
+}
