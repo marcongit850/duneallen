@@ -492,59 +492,52 @@ h2 {
   line-height: 1.45;
 }
 
-.arc,
-.steps {
+.numbers {
+  background: var(--sand);
+  color: var(--navy);
+  padding: 1.7rem 1rem 1.85rem;
+}
+
+.numbers-inner {
+  width: min(var(--page), 100%);
+  margin-inline: auto;
+}
+
+.figures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.35rem 1rem;
   list-style: none;
-  margin: 2.2rem 0 0;
+  margin: 0;
   padding: 0;
 }
 
-.arc {
-  display: grid;
-  gap: 0;
-  border-top: 1px solid var(--line);
+.figures li {
+  min-width: 0;
 }
 
-.arc li,
-.steps li {
-  position: relative;
-  padding: 1rem 0 1rem 1.4rem;
-}
-
-.arc li {
-  border-bottom: 1px solid var(--line);
-}
-
-.arc li::before,
-.steps li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 1.35rem;
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 50%;
-  background: var(--sea);
-  box-shadow: 0 0 0 4px rgba(47, 111, 104, 0.15);
-}
-
-.arc-year,
-.step-when {
+.figure-value {
   display: block;
-  font-size: 0.78rem;
-  font-weight: 650;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--teal);
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 560;
+  font-size: clamp(1.85rem, 8vw, 2.6rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--navy);
+  white-space: nowrap;
 }
 
-.arc p,
-.steps p {
-  margin: 0.25rem 0 0;
+.figure-label {
+  display: block;
+  margin-top: 0.4rem;
+  max-width: 14ch;
+  color: var(--teal);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
 }
 
 .case-card,
-.status-card,
 .form-card {
   background: var(--white);
   border: 1px solid var(--line);
@@ -553,8 +546,7 @@ h2 {
   box-shadow: 0 10px 30px rgba(12, 36, 48, 0.04);
 }
 
-.case-card h3,
-.status-card h3 {
+.case-card h3 {
   margin: 0;
   font-family: "Fraunces", Georgia, serif;
   font-size: 1.45rem;
@@ -563,10 +555,170 @@ h2 {
   color: var(--navy);
 }
 
-.steps li.is-next::before {
-  background: var(--navy);
-  box-shadow: 0 0 0 4px rgba(12, 48, 72, 0.12);
+.cross,
+.locator {
+  margin: 2rem 0 0;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  overflow: hidden;
 }
+
+.cross svg,
+.locator svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cross svg {
+  background: #e4eeec;
+}
+
+.locator {
+  width: min(100%, 52rem);
+  margin-inline: auto;
+}
+
+.locator svg {
+  background: #efe7dc;
+}
+
+.cross figcaption,
+.locator figcaption {
+  padding: 1rem 1rem 1.15rem;
+}
+
+.cross p,
+.locator figcaption {
+  margin: 0.7rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.locator figcaption {
+  margin: 0;
+  padding-top: 0.75rem;
+}
+
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.swatches li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.swatch {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 2px;
+  display: inline-block;
+  flex: 0 0 auto;
+  border: 1px solid rgba(12, 48, 72, 0.18);
+}
+
+.swatch.lot { background: #c9ad90; }
+.swatch.dry { background: #e6d3bf; }
+.swatch.wet { background: #2f6f68; }
+.swatch.gulf { background: #0c3048; }
+
+.yearline {
+  --dot: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0.15rem 0 0;
+}
+
+.yearline li {
+  position: relative;
+  padding: 0 0 1.65rem 1.9rem;
+}
+
+.yearline li:last-child {
+  padding-bottom: 0;
+}
+
+.yearline li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: calc(0.2rem + var(--dot) / 2);
+  bottom: calc(-0.2rem - var(--dot) / 2);
+  left: calc(var(--dot) / 2 - 1px);
+  width: 2px;
+  background: var(--teal);
+}
+
+.yearline li::after {
+  content: "";
+  position: absolute;
+  top: 0.2rem;
+  left: 0;
+  width: var(--dot);
+  height: var(--dot);
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--navy);
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.yearline li.is-next::after {
+  background: var(--teal);
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px var(--paper);
+}
+
+.yearline .year {
+  display: block;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+}
+
+.yearline p {
+  margin: 0.35rem 0 0;
+  font-size: 0.98rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 1.5rem;
+  margin-top: 0.55rem;
+  padding: 0 0.5rem;
+  border-radius: 3px;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.badge-family { background: var(--navy); color: var(--paper); }
+.badge-company { background: var(--teal); color: var(--paper); }
+.badge-court { background: var(--sea); color: var(--white); }
+.badge-appeal { background: var(--sand-deep); color: var(--navy-deep); }
+.badge-next { background: var(--focus); color: var(--navy-deep); }
 
 .gallery {
   display: grid;
@@ -846,6 +998,30 @@ h2 {
     padding-bottom: 3.4rem;
   }
 
+  .numbers {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .figures {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .figure-value {
+    font-size: clamp(1.7rem, 3vw, 3.15rem);
+  }
+
+  .figures li {
+    padding-left: 1.15rem;
+    border-left: 1px solid rgba(12, 48, 72, 0.16);
+  }
+
+  .figures li:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+
   .gallery {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -915,21 +1091,39 @@ h2 {
     padding-block: 6rem;
   }
 
-  .arc {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
-    border-top: 0;
+  .yearline {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin-top: 2.4rem;
+    padding: 0.55rem 0 0.2rem;
   }
 
-  .arc li {
-    border-bottom: 0;
-    border-top: 1px solid var(--line);
-    padding: 1.15rem 0.8rem 0 0;
+  .yearline li,
+  .yearline li:last-child {
+    padding: 1.45rem 1.15rem 0.2rem 0;
   }
 
-  /* Dot sits on the top rule, clear of the date label. */
-  .arc li::before {
-    top: calc(-0.275rem - 0.5px);
+  .yearline .year {
+    font-size: clamp(1.15rem, 1.45vw, 1.5rem);
+  }
+
+  /* Dot sits on the line, above the year. */
+  .yearline li::before,
+  .yearline li:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    width: auto;
+    height: 2px;
+    background: var(--teal);
+  }
+
+  .yearline li::after {
+    top: -5px;
+    left: 0;
   }
 
   .case-layout {
