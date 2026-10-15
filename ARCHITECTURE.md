@@ -27,6 +27,7 @@ The contact handler checks a honeypot field (`company_website`), rejects cross-o
 - Brand logo source: `images/logo.png` (not public). The header uses `public/images/logo.webp`, a transparent background version of that mark. Favicons are cropped from the D.
 - Hero still: `public/images/hero.webp` (2800px) with `public/images/hero-1400.webp` in `srcset`. It is Alexander Hatley's sea oats photograph at Topsail Hill Preserve State Park, CC BY 2.0. `public/images/og.jpg` is a 1200x630 crop of that same photograph. Historic shoreline: `public/images/historic-shoreline.webp`.
 - Community photos are four Alexander Hatley photographs of Topsail Hill Preserve State Park (next to Dune Allen), CC BY 2.0. Each has a full WebP and a 900px `srcset` variant. They are not labeled as Dune Allen itself. Credits (author, license link, source link, and the WebP edit) are in the footer. No deed boundary is drawn on any photo.
+- Community locator: `public/images/map-dune-allen-2400.webp` with `public/images/map-dune-allen-1200.webp` in `srcset` (16:10). USDA NAIP 2022 via USGS The National Map, public domain. Place names are in the image. The same credit line is in the figure caption and the footer.
 
 ## Donate link
 
