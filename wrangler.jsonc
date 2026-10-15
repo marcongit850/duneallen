@@ -1,0 +1,36 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "duneallen",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-15",
+  "upload_source_maps": true,
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.01
+    }
+  },
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  // Sends only from the site address. Recipients still have to be verified
+  // Email Routing destinations. Change the recipient in CONTACT_TO, not here.
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "allowed_sender_addresses": ["noreply@friendsofduneallen.com"]
+    }
+  ],
+  "vars": {
+    "CONTACT_TO": "marc@whpinc.com",
+    "CONTACT_FROM": "noreply@friendsofduneallen.com"
+  }
+}
