@@ -318,6 +318,13 @@ function htmlPage(title: string, message: string, detail: string, status: number
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSZ5S9MWE6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZSZ5S9MWE6');
+  </script>
   <title>${escapeHtml(title)} | Friends of Dune Allen</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
