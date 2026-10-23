@@ -13,7 +13,7 @@
    HERO_VIDEO_WEBM is optional. Visitors who prefer reduced motion always see the photo.
 */
 window.SITE_CONFIG = {
-  DONATE_URL: "",
+  DONATE_URL: "https://www.gofundme.com/f/maintaining-beach-access-for-duneallen-landowners",
   HERO_VIDEO: "",
   HERO_VIDEO_WEBM: "",
 };
