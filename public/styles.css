@@ -404,6 +404,34 @@ h1 {
   margin-top: 1.5rem;
 }
 
+.band-donate {
+  margin-top: 1.5rem;
+}
+
+.band-donate .band-actions {
+  margin-top: 1.25rem;
+}
+
+.gofundme-banner-link {
+  display: block;
+  max-width: 720px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.gofundme-banner-link:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.32);
+  transform: translateY(-2px);
+}
+
+.gofundme-banner-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .section,
 .band,
 .hero {
