@@ -933,10 +933,100 @@ h2 {
   color: var(--sand);
 }
 
+.footer-nav {
+  margin: 1.4rem 0 0;
+  font-size: 0.95rem;
+}
+
+.footer-nav a {
+  color: var(--sand);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.footer-nav a:hover {
+  color: white;
+}
+
 .legal {
   margin: 1.5rem 0 0;
   color: rgba(244, 239, 232, 0.72);
   font-size: 0.9rem;
+}
+
+.legal-page {
+  padding: 3.5rem 1rem 4.5rem;
+}
+
+.legal-prose {
+  max-width: 42rem;
+}
+
+.legal-prose h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  color: var(--navy);
+  max-width: none;
+}
+
+.legal-prose h2 {
+  margin: 2.2rem 0 0;
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  max-width: none;
+  color: var(--navy);
+}
+
+.legal-effective {
+  margin-top: 0.75rem !important;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.updates {
+  margin-top: 1.5rem;
+  max-width: var(--measure);
+}
+
+.updates-empty {
+  margin: 0;
+  color: var(--muted);
+}
+
+.updates-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.updates-item {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.updates-item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.updates-date {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.updates-title {
+  margin: 0.35rem 0 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.updates-item p {
+  margin: 0.65rem 0 0;
 }
 
 .result-page {
