@@ -15,7 +15,7 @@ A one page site for Friends of Dune Allen. It tells the story of the Dune Allen 
 
 ## Routes
 
-- `GET /` and other files in `public/` are static assets. `assets.not_found_handling` is `404-page` (`public/404.html`).
+- `GET /` and other files in `public/` are static assets. `assets.not_found_handling` is `404-page` (`public/404.html`). `public/privacy.html` is served at `/privacy` and `/privacy.html`.
 - `POST /api/contact` runs the Worker first (`assets.run_worker_first`: `/api/*`). JSON responses are for the page script. A normal form post (no JavaScript) gets a small HTML result page.
 - Any other method on `/api/contact` returns 405. Any other `/api/*` path returns 404.
 
@@ -31,7 +31,7 @@ The contact handler checks a honeypot field (`company_website`), rejects cross-o
 
 ## Analytics
 
-Google Analytics 4 (`gtag.js`, measurement ID `G-ZSZ5S9MWE6`) is in the `<head>` of every HTML page: `public/index.html`, `public/404.html`, and the contact result pages the Worker returns. The site does not set a Content-Security-Policy.
+Google Analytics 4 (`gtag.js`, measurement ID `G-ZSZ5S9MWE6`) is in the `<head>` of every HTML page: `public/index.html`, `public/privacy.html`, `public/404.html`, and the contact result pages the Worker returns. The site does not set a Content-Security-Policy.
 
 ## Donate link
 
