@@ -13,4 +13,4 @@ npx wrangler dev
 
 ## Settings
 
-Donation link and the optional hero video are both in `public/config.js`. See `ARCHITECTURE.md` for the Email Routing dashboard step, `CONTACT_TO`, and where to drop a future drone clip.
+GoFundMe and Venmo links are in the home page donate section. The optional hero video is in `public/config.js`. See `ARCHITECTURE.md` for the Email Routing dashboard step, `CONTACT_TO`, and where to drop a future drone clip.

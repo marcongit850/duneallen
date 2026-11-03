@@ -1,11 +1,8 @@
 /* Friends of Dune Allen site settings.
-   This is the only file to edit for donations and the hero video.
+   This file is for the optional hero video.
 
-   DONATE_URL
-   The full https link for online contributions. Every Contribute button uses it
-   and opens it in a new tab. Leave it as an empty string until the pay link exists.
-   While it is empty, those buttons scroll to the Help section, which says
-   "Online contributions coming soon."
+   Contribute buttons link to /#donate on the home page.
+   GoFundMe and Venmo links live in that section of index.html.
 
    HERO_VIDEO
    Path to a short muted looping MP4, for example "/media/hero.mp4",
@@ -13,7 +10,6 @@
    HERO_VIDEO_WEBM is optional. Visitors who prefer reduced motion always see the photo.
 */
 window.SITE_CONFIG = {
-  DONATE_URL: "https://www.gofundme.com/f/maintaining-beach-access-for-duneallen-landowners",
   HERO_VIDEO: "",
   HERO_VIDEO_WEBM: "",
 };

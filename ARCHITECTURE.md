@@ -1,6 +1,6 @@
 # Friends of Dune Allen: architecture
 
-Last checked against the code on Oct 16, 2026.
+Last checked against the code on Nov 3, 2026.
 
 ## What it does
 
@@ -33,12 +33,16 @@ The contact handler checks a honeypot field (`company_website`), rejects cross-o
 
 Google Analytics 4 (`gtag.js`, measurement ID `G-ZSZ5S9MWE6`) is in the `<head>` of every HTML page: `public/index.html`, `public/privacy.html`, `public/404.html`, and the contact result pages the Worker returns. The site does not set a Content-Security-Policy.
 
-## Donate link
+## Donate
 
-Every Contribute button reads `DONATE_URL` in `public/config.js`.
+Contribute buttons (the header on every page, and Support the Legal Effort on the home hero) point at `/#donate`. That anchor is the donation band on the home page, so the same link works from Privacy and from the home page. `html` uses `scroll-behavior: smooth`. `#donate` sets `scroll-margin-top` from the sticky header height so the band heading stays visible under the header. Visitors who prefer reduced motion get an instant jump.
 
-- Set it to the full `https://` pay link. Buttons then open that URL in a new tab, and the "Online contributions coming soon" line is hidden.
-- Leave it as `""` until the link exists. Buttons stay on the page and scroll to `#help`, which shows "Online contributions coming soon." Nothing points at a broken URL.
+The band shows two ways to give. They sit side by side from 960px up and stack on smaller screens.
+
+- GoFundMe: `public/images/gofundme-banner.webp`, with a 720px WebP and a JPEG fallback. The banner links to the campaign and opens in a new tab.
+- Venmo: `public/images/venmo-banner.webp` (1800x600). The banner links to `https://www.venmo.com/u/duneallenbeach-inc` and opens in a new tab.
+
+Payment links live in `public/index.html`. `public/config.js` no longer carries a donate URL.
 
 ## Hero video
 

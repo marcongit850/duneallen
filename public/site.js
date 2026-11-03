@@ -3,7 +3,6 @@
     document.documentElement.classList.add("js");
   }
   var config = window.SITE_CONFIG || {
-    DONATE_URL: "",
     HERO_VIDEO: "",
     HERO_VIDEO_WEBM: "",
   };
@@ -12,7 +11,7 @@
   var shareText =
     "Help preserve the Allen family legacy. Learn about the Dune Allen beach case and how to support the legal effort.";
 
-  initDonate(config.DONATE_URL || "");
+  initDonate();
   initNav();
   initHero(config);
   initShare();
@@ -20,23 +19,11 @@
   initReveal();
   initSectionSpy();
 
-  function initDonate(rawUrl) {
-    var donateUrl = String(rawUrl).trim();
-    var links = document.querySelectorAll("[data-donate]");
-    var notes = document.querySelectorAll("[data-donate-pending]");
-    if (!donateUrl) {
-      notes.forEach(function (note) {
-        note.hidden = false;
-      });
-      return;
-    }
-    links.forEach(function (link) {
-      link.setAttribute("href", donateUrl);
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener noreferrer");
-    });
-    notes.forEach(function (note) {
-      note.hidden = true;
+  function initDonate() {
+    document.querySelectorAll("[data-donate]").forEach(function (link) {
+      link.setAttribute("href", "/#donate");
+      link.removeAttribute("target");
+      link.removeAttribute("rel");
     });
   }
 
